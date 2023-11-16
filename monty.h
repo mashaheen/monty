@@ -17,9 +17,9 @@
  */
 typedef struct stack_s
 {
-int n;
-struct stack_s *prev;
-struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -31,8 +31,8 @@ struct stack_s *next;
  */
 typedef struct instruction_s
 {
-char *opcode;
-void (*f)(stack_t **stack, unsigned int line_number);
+    char *opcode;
+    void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
@@ -44,7 +44,7 @@ void file_read(FILE *fd);
 void get_function(char *opcode, char *value, int ln);
 void line_token(char *buffer, int num);
 stack_t *new_node(int n);
-void node_release(void)
+void node_release(void);
 void nop(stack_t **stack, unsigned int num);
 void pop_first(stack_t **stack, unsigned int line_number);
 void print_all(stack_t **stack, unsigned int num);

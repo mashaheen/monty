@@ -1,5 +1,4 @@
 #include "monty.h"
-// create_node
 
 void node_release(void)
 {

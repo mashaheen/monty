@@ -13,7 +13,7 @@ void file_read(FILE *fd)
 
     for (num = 1; getline(&buffer, &len, fd) != -1; num++)
     {
-        line_parse(buffer, num);
+        line_token(buffer, num);
     }
     free(buffer);
 }
