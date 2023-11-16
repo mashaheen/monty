@@ -6,14 +6,12 @@
  */
 void add(stack_t **stack, unsigned int num)
 {
-    int sum;
-
-    if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-        more_err(8, num, "add");
-
-    (*stack) = (*stack)->next;
-    sum = (*stack)->n + (*stack)->prev->n;
-    (*stack)->n = sum;
-    free((*stack)->prev);
-    (*stack)->prev = NULL;
+int sum;
+if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+more_err(8, num, "add");
+(*stack) = (*stack)->next;
+sum = (*stack)->n + (*stack)->prev->n;
+(*stack)->n = sum;
+free((*stack)->prev);
+(*stack)->prev = NULL;
 }

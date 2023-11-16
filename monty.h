@@ -3,10 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <unistd.h>
+#include <unistd.h>
 #include <ctype.h>
 #include <stdarg.h>
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -18,9 +17,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+int n;
+struct stack_s *prev;
+struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -32,8 +31,24 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+char *opcode;
+void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+extern stack_t *head;
+void add(stack_t **stack, unsigned int num);
+void error_type(int num, ...);
+void error_type2(int num, ...);
+void file_open(char *file_name);
+void file_read(FILE *fd);
+void get_function(char *opcode, char *value, int ln);
+void line_token(char *buffer, int num);
+stack_t *new_node(int n);
+stack_t *node_release(int n);
+void nop(stack_t **stack, unsigned int num);
+void pop_first(stack_t **stack, unsigned int line_number);
+void print_all(stack_t **stack, unsigned int num);
+void print_first_node(stack_t **stack, unsigned int num);
+void stack_pushh(stack_t **push_node, __attribute__((unused)) unsigned int len);
+void swap(stack_t **stack, unsigned int num);
+void use_function(op_func func, char *op, char *val, int ln);
 #endif
