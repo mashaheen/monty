@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include <ctype.h>
 #include <stdarg.h>
 /**
@@ -35,6 +35,7 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 extern stack_t *head;
+typedef void (*op_func)(stack_t **, unsigned int);
 void add(stack_t **stack, unsigned int num);
 void error_type(int num, ...);
 void error_type2(int num, ...);
@@ -43,7 +44,7 @@ void file_read(FILE *fd);
 void get_function(char *opcode, char *value, int ln);
 void line_token(char *buffer, int num);
 stack_t *new_node(int n);
-stack_t *node_release(int n);
+void node_release(void)
 void nop(stack_t **stack, unsigned int num);
 void pop_first(stack_t **stack, unsigned int line_number);
 void print_all(stack_t **stack, unsigned int num);
