@@ -8,7 +8,7 @@
 
 void file_read(FILE *fd)
 {
-    int num, format = 0;
+    int num;
     char *buffer = NULL;
     size_t len = 0;
 

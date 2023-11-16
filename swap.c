@@ -9,7 +9,7 @@ void swap(stack_t **stack, unsigned int num)
     stack_t *temporary;
 
     if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-        more_err(8, num, "swap");
+        error_type2(8, num, "swap");
     temporary = (*stack)->next;
     (*stack)->next = temporary->next;
     if (temporary->next != NULL)

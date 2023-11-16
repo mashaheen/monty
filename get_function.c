@@ -33,5 +33,5 @@ void get_function(char *opcode, char *value, int ln)
         }
     }
     if (flag == 1)
-        err(3, ln, opcode);
+        error_type(3, ln, opcode);
 }

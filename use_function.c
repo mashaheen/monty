@@ -21,11 +21,11 @@ void use_function(op_func func, char *op, char *val, int ln)
             flag = -1;
         }
         if (val == NULL)
-            err(5, ln);
+            error_type(5, ln);
         for (i = 0; val[i] != '\0'; i++)
         {
             if (isdigit(val[i]) == 0)
-                err(5, ln);
+                error_type(5, ln);
         }
         node = new_node(atoi(val) * flag);
         func(&node, ln);

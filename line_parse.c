@@ -12,7 +12,7 @@ void line_token(char *buffer, int num)
     const char *delim = "\n ";
 
     if (buffer == NULL)
-        err(4);
+        error_type(4);
 
     opcode = strtok(buffer, delim);
     value = strtok(NULL, delim);
