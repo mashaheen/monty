@@ -34,7 +34,7 @@ typedef struct instruction_s
 char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-extern stack_t *head = NULL;
+extern stack_t *head ;
 typedef void (*op_func)(stack_t **, unsigned int);
 void add(stack_t **stack, unsigned int num);
 void error_type(int num, ...);
