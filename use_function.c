@@ -8,28 +8,27 @@
  */
 void use_function(op_func func, char *op, char *val, int ln)
 {
-    stack_t *node;
-    int flag;
-    int i;
-
-    flag = 1;
-    if (strcmp(op, "push") == 0)
-    {
-        if (val != NULL && val[0] == '-')
-        {
-            val = val + 1;
-            flag = -1;
-        }
-        if (val == NULL)
-            error_type(5, ln);
-        for (i = 0; val[i] != '\0'; i++)
-        {
-            if (isdigit(val[i]) == 0)
-                error_type(5, ln);
-        }
-        node = new_node(atoi(val) * flag);
-        func(&node, ln);
-    }
-    else
-        func(&head, ln);
+stack_t *node;
+int flag;
+int i;
+flag = 1;
+if (strcmp(op, "push") == 0)
+{
+if (val != NULL && val[0] == '-')
+{
+val = val + 1;
+flag = -1;
+}
+if (val == NULL)
+error_type(5, ln);
+for (i = 0; val[i] != '\0'; i++)
+{
+if (isdigit(val[i]) == 0)
+error_type(5, ln);
+}
+node = new_node(atoi(val) * flag);
+func(&node, ln);
+}
+else
+func(&head, ln);
 }

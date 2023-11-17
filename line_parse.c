@@ -8,13 +8,11 @@
 
 void line_token(char *buffer, int num)
 {
-    char *opcode, *value;
-    const char *delim = "\n ";
-
-    if (buffer == NULL)
-        error_type(4);
-
-    opcode = strtok(buffer, delim);
-    value = strtok(NULL, delim);
-    get_function(opcode, value, num);
+char *opcode, *value;
+const char *delim = "\n ";
+if (buffer == NULL)
+error_type(4);
+opcode = strtok(buffer, delim);
+value = strtok(NULL, delim);
+get_function(opcode, value, num);
 }

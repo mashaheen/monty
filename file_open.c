@@ -8,11 +8,9 @@
 
 void file_open(char *file_name)
 {
-    FILE *fd = fopen(file_name, "r");
-
-    if (file_name == NULL || fd == NULL)
-        error_type(2, file_name);
-
-    file_read(fd);
-    fclose(fd);
+FILE *fd = fopen(file_name, "r");
+if (file_name == NULL || fd == NULL)
+error_type(2, file_name);
+file_read(fd);
+fclose(fd);
 }
