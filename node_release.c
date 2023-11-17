@@ -1,5 +1,7 @@
 #include "monty.h"
-
+/**
+ * node_release - free the node from memory.
+ */
 void node_release(void)
 {
 stack_t *tmp;
