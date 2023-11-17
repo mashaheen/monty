@@ -34,7 +34,7 @@ typedef struct instruction_s
 char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-extern stack_t *head;
+extern stack_t *head = NULL;
 typedef void (*op_func)(stack_t **, unsigned int);
 void add(stack_t **stack, unsigned int num);
 void error_type(int num, ...);
@@ -49,7 +49,7 @@ void nop(stack_t **stack, unsigned int num);
 void pop_first(stack_t **stack, unsigned int line_number);
 void print_all(stack_t **stack, unsigned int num);
 void print_first_node(stack_t **stack, unsigned int num);
-void stack_pushh(stack_t **push_node, __attribute__((unused)) unsigned int len);
+void stack_pushh(stack_t **push_node, __attribute__((unused))unsigned int len);
 void swap(stack_t **stack, unsigned int num);
 void use_function(op_func func, char *op, char *val, int ln);
 #endif
